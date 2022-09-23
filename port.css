@@ -1,0 +1,29 @@
+#wholebody{
+    background-image: url(https://cdn.pixabay.com/photo/2022/08/28/08/49/beach-7416035_1280.jpg);
+    height: 100vh;
+    background-size: auto;
+}
+#dp{
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 5rem auto 1rem;
+}
+
+#smallborder{
+    border: 1px solid #eee5c9;
+    border-radius: 5px;
+}
+.cardcol{
+    background-color: #eee5c9;
+}
+h2{
+    color: #eee5c9;
+}
+#thirdbody{
+    border-top: dotted 2px #eee5c9;
+}
+*{
+    scroll-behavior: smooth;
+}
