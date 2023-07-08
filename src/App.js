@@ -156,6 +156,7 @@ const App = () => {
           >
             <div className="w-full backdrop-blur flex flex-col text-purple-500">
               <Link
+                onClick={() => setOpen(false)}
                 to="section1"
                 spy={true}
                 smooth={true}
@@ -169,6 +170,7 @@ const App = () => {
                 Welcome
               </Link>
               <Link
+                onClick={() => setOpen(false)}
                 to="section2"
                 spy={true}
                 smooth={true}
@@ -182,6 +184,7 @@ const App = () => {
                 About Me
               </Link>
               <Link
+                onClick={() => setOpen(false)}
                 to="section3"
                 spy={true}
                 smooth={true}
@@ -195,6 +198,7 @@ const App = () => {
                 Technical Proficiencies
               </Link>
               <Link
+                onClick={() => setOpen(false)}
                 to="section4"
                 spy={true}
                 smooth={true}
@@ -208,6 +212,7 @@ const App = () => {
                 My Projects
               </Link>
               <Link
+                onClick={() => setOpen(false)}
                 to="section5"
                 spy={true}
                 smooth={true}
