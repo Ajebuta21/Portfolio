@@ -4,6 +4,7 @@ import logo from "./Elvis.png";
 import elvis from "./my.JPG";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ElvisCv from "./ElvisCV.pdf";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("section1");
@@ -21,23 +22,30 @@ const App = () => {
     AOS.refresh();
   }, []);
 
-    const [bg, setBg] = useState("bg-transparent");
-    const [scrollY, setScrollY] = useState(0);
-    const [open, setOpen] = useState(false);
+  const [bg, setBg] = useState("bg-transparent");
+  const [scrollY, setScrollY] = useState(0);
+  const [open, setOpen] = useState(false);
 
-    window.addEventListener("scroll", () => {
-      setScrollY(window.scrollY);
-    });
-    useEffect(() => {
-      if (scrollY > 0) {
-        setBg("bg-white");
-      } else {
-        setBg("bg-transparent");
-      }
-    }, [scrollY]);
+  window.addEventListener("scroll", () => {
+    setScrollY(window.scrollY);
+  });
+  useEffect(() => {
+    if (scrollY > 0) {
+      setBg("bg-white");
+    } else {
+      setBg("bg-transparent");
+    }
+  }, [scrollY]);
+
+  const downloadPdf = () => {
+    const link = document.createElement("a");
+    link.href = ElvisCv;
+    link.download = "ElvisCv.pdf";
+    link.click();
+  };
 
   return (
-    <div className="relative isolate overflow-hidden bg-white min-h-screen lg:overflow-visible">
+    <div className="relative isolate overflow-hidden bg-white w-full">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <svg
           className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -246,11 +254,17 @@ const App = () => {
           >
             Hi, I'm <span className="text-purple-500">Elvis Nwankwere</span>, a
             highly skilled and experienced Full Stack Web Developer specializing
-            in React and Laravel. With a solid foundation in HTML, CSS,
-            JavaScript, and PHP, I am passionate about creating dynamic and
-            innovative web applications that deliver exceptional user
-            experiences.
+            in React Js, React Native and Laravel. With a solid foundation in
+            HTML, CSS, JavaScript, and PHP, I am passionate about creating
+            dynamic and innovative web applications that deliver exceptional
+            user experiences.
           </p>
+          <button
+            onClick={downloadPdf}
+            className="text-white my-2 px-2 py-0.5 rounded-sm bg-purple-500 text-sm shadow-md hover:bg-white hover:text-purple-500 hover:scale-90 transition-all ease-in-out"
+          >
+            Download my CV
+          </button>
         </div>
         <div className="w-full h-full flex p-10 items-center justify-center">
           <div
